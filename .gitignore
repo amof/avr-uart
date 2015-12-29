@@ -32,3 +32,4 @@
 # Debug files
 *.dSYM/
 
+UART-example/UART-example/Debug/
