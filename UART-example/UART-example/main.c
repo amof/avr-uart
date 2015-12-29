@@ -23,17 +23,17 @@ LICENSE:
 ************************************************************************/
 
 #include <avr/io.h>
-#include <avr/interrupt.h>
-#include <util/delay.h>
+/*#include <avr/interrupt.h>
+#include <util/delay.h>*/
 
 #include "UART/Uart.h"
 
 int main(void)
 {
-    uart_init(UART_BAUD_SELECT(57600, 8000000L));
+	uart_init(UART_BAUD_SELECT(57600, 8000000L));
     sei();
 
-    while(1){;
+    while(1){
 		if(uart_available()>0){
 			for(uint8_t i=0;i<uart_available();i++){
 				uart_putc(uart_getc());

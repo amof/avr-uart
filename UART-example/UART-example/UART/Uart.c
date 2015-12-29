@@ -119,7 +119,7 @@ Function: UART Receive Complete interrupt
 Purpose:  called when the UART has received a character
 **************************************************************************/
 {
-	uint8_t tmphead;
+	uint16_t tmphead;
 	uint8_t data;
 	uint8_t usr;
 	uint8_t lastRxError;
