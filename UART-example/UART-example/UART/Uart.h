@@ -114,6 +114,7 @@ LICENSE:
 /* Macros, to allow use of legacy names */
 
 #define uart_init(b)      uart0_init(b)
+#define uart_close()     uart0_close()
 #define uart_getc()       uart0_getc()
 #define uart_putc(d)      uart0_putc(d)
 #define uart_puts(s)      uart0_puts(s)
@@ -131,6 +132,13 @@ LICENSE:
    @return  none
 */
 extern void uart0_init(uint32_t baudrate);
+
+/**
+   @brief   Close UART, flush and clear any received datas
+   @param   none
+   @return  none
+*/
+extern void uart0_close(void);
 
 
 /**
@@ -245,6 +253,8 @@ extern void uart0_flush(void);
 
 /** @brief  Initialize USART1 (only available on selected ATmegas) @see uart_init */
 extern void uart1_init(uint32_t baudrate);
+/** @brief  Close USART1 (only available on selected ATmegas) @see uart_close */
+extern void uart1_close(void);
 /** @brief  Get received byte of USART1 from ringbuffer. (only available on selected ATmega) @see uart_getc */
 extern uint16_t uart1_getc(void);
 /** @brief  Peek at next byte in USART1 ringbuffer */

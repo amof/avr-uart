@@ -23,8 +23,8 @@ LICENSE:
 ************************************************************************/
 
 #include <avr/io.h>
-/*#include <avr/interrupt.h>
-#include <util/delay.h>*/
+#include <avr/interrupt.h>
+#include <util/delay.h>
 
 #include "UART/Uart.h"
 

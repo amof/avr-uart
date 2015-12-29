@@ -197,6 +197,24 @@ void uart0_init(uint32_t baudrate){
 	
 }
 
+
+/*************************************************************************
+Function: uart0_close()
+Purpose:  Close UART, flush and clear any received datas
+Input:    none
+Returns:  none
+**************************************************************************/
+void uart0_close(void){
+	
+	uart0_flush();
+	
+	UART0_CONTROL &= ~(1<<RXEN0);
+	UART0_CONTROL &= ~(1<<TXEN0);
+	UART0_CONTROL &= ~(1<<RXCIE0);
+	UART0_CONTROL &= ~(1<<UART0_UDRIE);
+}
+
+
 /*************************************************************************
 Function: uart0_getc()
 Purpose:  return byte from ringbuffer
@@ -417,6 +435,22 @@ void uart1_init(uint32_t baudrate)
 		
 } /* uart_init */
 
+
+/*************************************************************************
+Function: uart1_close()
+Purpose:  Close UART, flush and clear any received datas
+Input:    none
+Returns:  none
+**************************************************************************/
+void uart1_close(void){
+	
+	uart1_flush();
+	
+	UART1_CONTROL &= ~(1<<RXEN1);
+	UART1_CONTROL &= ~(1<<TXEN1);
+	UART1_CONTROL &= ~(1<<RXCIE1);
+	UART1_CONTROL &= ~(1<<UART1_UDRIE);
+}
 
 /*************************************************************************
 Function: uart1_getc()
