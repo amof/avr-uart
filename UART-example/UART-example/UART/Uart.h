@@ -114,7 +114,7 @@ LICENSE:
 /* Macros, to allow use of legacy names */
 
 #define uart_init(b)      uart0_init(b)
-#define uart_close()     uart0_close()
+#define uart_close()      uart0_close()
 #define uart_getc()       uart0_getc()
 #define uart_putc(d)      uart0_putc(d)
 #define uart_puts(s)      uart0_puts(s)
